@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JQuery Task 1 and 2 and 3 and General Task Combine</title>
+   <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+   <link rel="stylesheet" href="./bootstrap/bootstrap.bundle.min.js">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+ <!-- Task 1 and 2 to 2.3 -->
+   <div class="container mt-1  ">
+      <header class="h1 row head-text bg-color">
+         <marquee width="100%" behavior="alternate">JQuery Task 1 and 2</marquee>
+      </header>
+      <div class="row justify-content-around">
+         <div class="col-sm-3"><button type="button" class="btn btn-primary commonButtonCss mb-4 mt-4 " id="addRow">Add
+               Row</button></div>
+         <div class="col-sm-3"><button type="button" class="btn btn-outline-primary commonButtonCss mb-4 mt-4"
+               id="refresh">Refresh</button></div>
+         <div class="col-sm-3"><button type="button" class="btn btn-outline-primary commonButtonCss mb-4 mt-4"
+               id="matrix">Click Here To See Matrix Task Task 1.2</button></div>
+         <div class="col-sm-3  blink_me" id="counter"></div>
+      </div>
+        <!-- Input Table Creation -->
+      <div class="over-flow">
+         <table class="table  table-striped css-serial mainTable bg-color text">
+            <thead>
+               <th class="blink_me">No</th>
+               <th class="blink_me">Name</th>
+               <th class="blink_me">Subject</th>
+               <th class="blink_me">Mark</th>
+               <th class="blink_me">Action</th>
+            </thead>
+            <tbody id="inputTableGenerate">
+            </tbody>
+         </table>
+      </div>
+      <div>
+         <button type="button" class="btn btn-primary commonButtonCss mb-4" id="saveData">Save</button>
+      </div>
+      <!-- Task 1.1 -->
+      <!-- Matrix Task Table -->
+      <div id="generateMatrix" class=" mb-4 matrix over-flow">
+      </div>
+      <div class="row mb-4">
+         <div class="col-sm-6"><select class="form-select mt-4" id="sortingList" onchange="gettingList()">
+               <option class="text">Select sorting Option</option>
+               <option value="1" class="text">Sort By Name</option>
+               <option value="2" class="text">Sort By Subject</option>
+               <option value="3" class="text">Sort By Marks</option>
+            </select></div>
+         <div class="col-sm-6 form mt-4 mb-4">
+            <i class="fa fa-search"></i>
+            <input type="text" class="form-control form-input" placeholder="Search..." id="inputSearch"
+               onclick="search()">
+            <span class="left-pan"><i class="fa fa-microphone"></i></span>
+         </div>
+         <!-- Result Table -->
+         <div class="over-flow" id="outputTable2">
+            <p class="h3"><b style="border: 2;">Result Table</b></p>
+            <table class="table  table-striped css-serial bg-color text mainTable">
+               <thead>
+                  <tr>
+                     <th class="blink_me">No</th>
+                     <th class="blink_me" data-type="string">Name</th>
+                     <th class="blink_me" data-type="string">Subject</th>
+                     <th class="blink_me" data-type="number">Mark</th>
+                  </tr>
+               </thead>
+               <tbody id="outputTableGenerate">
+               </tbody>
+            </table>
+         </div>
+         <!-- Percentage Table -->
+         <div class="over-flow">
+            <table class="table  table-striped css-serial bg-color text mainTable  ">
+               <p class="h3"><b>Percentage Table</b></p>
+               <thead>
+                  <tr>
+                     <th class="blink_me">No</th>
+                     <th class="blink_me">Name</th>
+                     <th class="blink_me">Total Marks</th>
+                     <th class="blink_me">Percentage %</th>
+                  </tr>
+               </thead>
+               <tbody id="outputPercentageTableGenerate">
+               </tbody>
+            </table>
+         </div>
+         <!-- Task 3 -->
+         <header class="h1 row head-text bg-color mt-5">
+            <marquee>Ajax Task Task 3</marquee>
+         </header>
+         <div class="row mt-5  ">
+            <div class="col-sm-6 "><input class="form-control form-input"
+                  placeholder="https://api.publicapis.org/entries" id="apiInput"
+                  value="https://api.publicapis.org/entries"></div>
+            <div class="col-sm-6"><button type="button" class="btn btn-primary  commonButtonCss "
+                  id="generateTableBtn">Generate Table</button></div>
+         </div>
+         <!-- Ajax Table -->
+         <div class="over-flow">
+            <table class="table  table-striped css-serial bg-color text mainTable mb-4 ">
+               <p class="h3 mt-4"><b>Data</b></p>
+               <thead>
+                  <tr>
+                     <th class="blink_me">API</th>
+                     <th class="blink_me">DESCRIPTION</th>
+                     <th class="blink_me">AUTH</th>
+                     <th class="blink_me">CORS</th>
+                     <th class="blink_me">LINK</th>
+                     <th class="blink_me">Category</th>
+                     <th class="blink_me">Https</th>
+                  </tr>
+               </thead>
+               <tbody id="apiDataTable">
+               </tbody>
+            </table>
+         </div>
+         <!-- General Task -->
+         <div>
+            <header class="h1 row head-text bg-color">
+               <marquee direction="right">General Task</marquee>
+            </header>
+            <button type="button" class="btn btn-primary mt-4 mb-4 commonButtonCss" onclick="textGet();">Click Me To get
+               all text of box</button>
+            <div class="row-6 mt-4 "><input type="text" placeholder="Input 1" />
+               <input type="text" placeholder="Input 2" />
+               <input type="text" placeholder="Input 3" />
+               <input type="text" placeholder="Input 4" />
+               <input type="text" placeholder="Input 5" />
+               <input type="text" placeholder="Input 6" />
+               <input type="text" placeholder="Input 7" />
+               <input type="text" placeholder="Input 8" />
+               <input type="text" placeholder="Input 9" />
+               <input type="text" placeholder="Input 10" />
+               <input type="text" placeholder="Input 11" />
+               <input type="text" placeholder="Input 12" />
+               <input type="text" placeholder="Input 13" />
+               <input type="text" placeholder="Input 14" />
+               <input type="text" placeholder="Input 15" />
+               <input type="text" placeholder="Input 16" /> 
+            </div>
+            <!-- General Task Table -->
+            <div class="over-flow">
+               <table class="table  table-striped  bg-color text mainTable mb-4 ">
+                  <p class="h3 mt-4"><b>Data</b></p>
+                  <thead>
+                        <th class="blink_me">OUTPUT GENERAL TASK</th>
+                  </thead>
+                  <tbody id="generalTaskDataTable">
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+</body>
+
+<script src="./js/jquery-3.6.3.js"></script>
+<script src="./js/script.js"></script>
+<script src="./svg/d3.min.js"></script>
+<script src="./js/sweetalert.min.js"></script>
+<script src="./js/sweetalert2@11"></script>
+<script src="./js/jquery.min.js"></script>
+
+
+</html>

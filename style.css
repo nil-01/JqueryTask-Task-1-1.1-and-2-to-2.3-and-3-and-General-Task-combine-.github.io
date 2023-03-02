@@ -1,0 +1,259 @@
+.css-serial {
+  counter-reset: serial-number;
+  /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+  counter-increment: serial-number;
+  /* Increment the serial number counter */
+  content: counter(serial-number);
+  /* Display the counter */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("https://picsum.photos/200/300/?blur");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.commonButtonCss {
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 10px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  color: #fff;
+  z-index: 1;
+  transition: 0.5s;
+  backdrop-filter: blur(15px);
+}
+
+.commonButtonCss:hover {
+  letter-spacing: 3px;
+}
+
+.button-style {
+  padding: 2%;
+  margin: 2%;
+}
+
+.maintable {
+  z-index: 1;
+  transition: 0.5s;
+  backdrop-filter: blur(15px);
+ 
+}
+
+/* #outputTable{
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+
+#outputTable2{
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+} */
+
+.matrix table td, tr{
+  
+  border-radius: 8px;
+  border: 2px solid;
+  text-align: center;
+  border-collapse: collapse;
+  color: rgb(17, 190, 190);
+  z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+table,
+td,
+tr {
+  border-radius: 8px;
+  border: 2px solid;
+  text-align: center;
+  border-collapse: collapse;
+  color: antiquewhite;
+
+
+}
+
+tr:hover {
+  background-color: coral;
+}
+
+.bg-color {
+  background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+
+}
+
+.head-text {
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 10px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  color: #fff;
+  z-index: 1;
+  transition: 0.5s;
+  backdrop-filter: blur(15px);
+}
+
+.text {
+  color: rgb(211, 161, 203);
+  text-shadow: 1px 1px 2px #000000;
+}
+
+
+input:active,
+input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-style {
+  padding: 2%;
+}
+
+.over-flow {
+  overflow-x: auto;
+}
+
+@media (max-width: 575.98px) {
+  .mainTable tr td {
+    width: 100%;
+  }
+
+  .mainTable tr {
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainTable th {
+    display: none;
+  }
+}
+
+/* Counter */
+.path--background {
+  fill: rgb(55, 196, 67);
+  stroke: #fff;
+  stroke-width: 0px;
+}
+
+.pulse {
+  fill: rgb(255, 74, 74) !important;
+}
+
+.path--foreground {
+  fill: #eee;
+  stroke: #eee;
+  stroke-width: 2px;
+}
+
+.label {
+  font: 25px "Open Sans";
+  font-weight: 900;
+  text-anchor: middle;
+  fill: rgb(63, 152, 187);
+}
+
+/* Anitmation */
+/* Header */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Button */
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+/* button */
+@keyframes btn-animation {
+  from {
+    background-color: #ff7a59;
+    width: 150px;
+    top: 10px;
+  }
+  to {
+    background-color: #c85edd;
+    width: 80px;
+    top: 100px;
+  }
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+header {
+  animation: 1s ease-out 0s 1 slideInLeft;
+  background: #666;
+  padding: 40px;
+}
+
+
+
+.commonButtonCss{
+  animation-name: btn-animation;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+.commonButtonCss:hover{
+  animation-name: wiggle;
+}
+
+
+/* For 33 marks css */
+.fail{
+  background-color: red;
+  color: #000000;
+}
+.pass{
+  background-color: lightgreen;
+  color: #000000;
+}
